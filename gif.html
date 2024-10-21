@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmação de Presença</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        background-color: black;
+      }
+
+      section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      /* Estilizando o iframe do YouTube */
+      .background-section {
+        background-image: url("roblox.gif");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .box {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        width: 70vw;
+        min-height: 50%;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 10px;
+        object-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+
+      p, label {
+        font-size: 16px;
+        color: #f1f1f1;
+
+      }
+
+      #status {
+        display: none;
+        width: 100%;
+        height: 100px;
+        background-color: rgb(255, 255, 255.9);
+        color: black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      #loading {
+        display: none; /* Inicialmente escondido */
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        color: white; /* Texto branco */
+        text-align: center; /* Centraliza o texto */
+        padding-top: 20%;
+        font-size: 24px; /* Tamanho do texto */
+      }
+
+      .date {
+        font-weight: bolder;
+        font-size: 16px;
+        color: #f1f1f1;
+
+      }
+
+      #guest-inputs,
+      #rsvp-form {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .item-guest {
+        display: flex;
+        flex-direction: column; /* Alinha os inputs em coluna */
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .item-guest label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #f1f1f1;
+        display: block;
+        text-align: left;
+        width: 50%;
+      }
+
+      .item-guest input,
+      .item-guest select {
+        width: 50%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .item-guest input {
+        margin-bottom: 15px;
+      }
+
+      /* Garantir que inputs e botões tenham a mesma altura */
+      .form-control,
+      .btn {
+        height: 45px;
+      }
+
+      #qtdd {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      #qtdd input,
+      #generate-forms {
+        height: 45px;
+      }
+
+      /* Estilo para o divisor */
+      .divider {
+        border: 0;
+        height: 1px;
+        background-color: #fff;
+        margin: 15px 0;
+        width: 100%;
+      }
+      *{
+        color: black;
+      }
+      .jorge{
+         width: 400px;
+         margin: 16px 0 16px 0;
+        }
+
+      @media (max-width: 768px) {
+        .background-section {
+          background-size: cover;
+        }
+
+        .box {
+          width: 90vw;
+          padding: 15px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .date {
+          font-size: 24px;
+        }
+
+        #qtdd {
+          flex-direction: column;
+        }
+
+        #qtdd label,
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        #qtdd input {
+          width: 100px;
+          padding: 5px;
+        }
+
+        #generate-forms {
+          width: 100%;
+        }
+
+        #rsvp-form button {
+          width: 100%;
+          padding: 10px;
+        }
+
+        #status {
+          font-size: 14px;
+        }
+
+        #loading {
+          font-size: 18px;
+        }
+
+        .jorge{
+         width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="background-section">
+      <div class="box">
+        <div>
+          <!-- <h1>Jorge</h1> -->
+           <img class="jorge" src="jorge.png" alt="jorge-nome">
+          <p>Venha jogar e comemorar conosco!</p>
+
+          <div class="date">
+            <p>08 de nov. 2024</p>
+            <p>18:30 às 22:30</p>
+          </div>
+
+          <p>
+            <a
+              href="mapa.html"
+              style="text-decoration: none; color: #fff; font-weight: bold"
+              >Local: Cake House</a
+            >
+          </p>
+        </div>
+
+        <div id="qtdd" class="d-flex flex-column align-items-center">
+          <label for="num_guests">
+            Deseja confirmar a presença de quantas pessoas?
+          </label>
+          <div class="d-flex justify-content-center">
+            <input
+              type="number"
+              class="form-control mr-2"
+              id="num_guests"
+              min="1"
+              max="5"
+              required
+            />
+            <button id="generate-forms" class="btn btn-primary">Enviar</button>
+          </div>
+        </div>
+
+        <form id="rsvp-form" style="display: none" class="mt-3">
+          <div id="guest-inputs"></div>
+          <button type="submit" class="btn btn-success mt-3">
+            Confirmar Presença
+          </button>
+        </form>
+      </div>
+
+      <div id="loading">
+        <p id="status"></p>
+        <i class="fas fa-spinner fa-spin"></i> Registrando informações,
+        aguarde...
+      </div>
+    </section>
+
+    <!-- Bootstrap JS e dependências -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    ></script>
+
+    <script>
+      const form = document.getElementById("rsvp-form");
+      const qtdd = document.getElementById("qtdd");
+      const status = document.getElementById("status");
+      const generateFormsButton = document.getElementById("generate-forms");
+      const guestInputsContainer = document.getElementById("guest-inputs");
+      const loadingDiv = document.getElementById("loading"); // Seleciona a div de loading
+
+      generateFormsButton.addEventListener("click", () => {
+        const numGuests = document.getElementById("num_guests").value;
+        guestInputsContainer.innerHTML = ""; // Limpa os campos existentes
+
+        for (let i = 0; i < numGuests; i++) {
+          const guestDiv = document.createElement("div");
+          guestDiv.classList.add("item-guest"); // Adiciona a classe 'item-guest'
+          guestDiv.innerHTML = `
+            <label for="name_${i}">Nome:</label>
+            <input type="text" id="name_${i}" name="name_${i}" required class="form-control">
+            <label for="is_child_${i}">Idade: </label>
+            <select id="is_child_${i}" name="is_child_${i}" class="form-control">
+              <option value="adulto">Adulto</option>
+              <option value="adulto">9 anos ou mais</option>
+              <option value="crianca">4 a 8 anos</option>
+              <option value="free">0 a 3 anos</option>
+            </select>
+            <hr class="divider"> <!-- Divider entre cada convidado -->
+          `;
+          guestInputsContainer.appendChild(guestDiv);
+        }
+
+        form.style.display = "block"; // Exibe o formulário de convidados
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const numGuests = document.getElementById("num_guests").value;
+        for (let i = 0; i < numGuests; i++) {
+          const name = document.getElementById(`name_${i}`).value;
+          const isChild = document.getElementById(`is_child_${i}`).value;
+          console.log("Nome: ", name);
+          console.log("Idade: ", isChild);
+        }
+
+        status.innerHTML = "Aguarde, enviando os dados...";
+        loadingDiv.style.display = "block"; // Mostra a div de loading
+
+        setTimeout(() => {
+          loadingDiv.style.display = "none"; // Oculta a div de loading após o envio
+          status.innerHTML = "Sua presença foi confirmada com sucesso!";
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
